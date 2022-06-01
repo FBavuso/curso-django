@@ -41,4 +41,3 @@ jobs:
         pipenv run pytest --cov=pypro
     - name: Codecov
       uses: codecov/codecov-action@v3.1.0
-

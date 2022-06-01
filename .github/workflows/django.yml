@@ -39,6 +39,6 @@ jobs:
     - name: Run Tests
       run: |
         pipenv run pytest --cov=pypro
-    - name:
+    - name: codecov
       run: |  
         pipenv run codecov

@@ -38,16 +38,9 @@ jobs:
 
     - name: Run Tests
       run: |
-        pipenv run pytest --cov=pypro --cov-report=xml
+        pipenv run pytest --cov=pypro
     - name: Upload coverage to Codecov
-      uses: codecov/codecov-action@v2
       with:
-        token: ${{ secrets.CODECOV_TOKEN }}
-        directory: ./coverage/reports/
-        env_vars: OS,PYTHON
-        fail_ci_if_error: true
-        files: ./coverage1.xml,./coverage2.xml
-        flags: unittests
-        name: codecov-umbrella
-        path_to_write_report: ./coverage/codecov_report.txt
-        verbose: true
+        token: 9236e786-2e8e-43e7-ac4d-ba4fdb5a918f
+        run: |
+          pipenv run codecov

@@ -38,9 +38,7 @@ jobs:
 
     - name: Run Tests
       run: |
-        pipenv run pytest
-
-    - name: Se Sucesso
-      if: sucess()
-      run: |
+        pipenv run pytest --cov=pypro
+    - name:
+      run: |  
         pipenv run codecov

@@ -35,12 +35,7 @@ jobs:
       if: steps.cache-pipenv.outputs.cache-hit != 'true'
       run: |
         pipenv install --deploy --dev
-    - name: Generate coverage report
-      run: |
-        pipenv run pytest --cov=pypro --cov-report=xml
-    - name: Upload coverage to Codecov
-      uses: codecov/codecov-action@v2
-      with:
-        with:
-          files: ./coverage.xml
-          fail_ci_if_error: true
+    - name: Run tests and collect coverage
+      run: pipenv run pytest --cov=pypro
+    - name: Upload coverage reports to Codecov with GitHub Action
+      uses: codecov/codecov-action@v3

@@ -36,8 +36,8 @@ jobs:
       run: |
         pipenv install --deploy --dev
     - name: Generate coverage report
-        run: |
-          pipenv run pytest --cov=pypro --cov-report=xml
+      run: |
+        pipenv run pytest --cov=pypro --cov-report=xml
     - name: Upload coverage to Codecov
       uses: codecov/codecov-action@v2
       with:

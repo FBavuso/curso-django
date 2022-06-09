@@ -8,9 +8,9 @@ on:
 
 jobs:
   build:
-  env:
-    DEBUG: True
     runs-on: ubuntu-latest
+    env:
+      DEBUG: True
     strategy:
       max-parallel: 4
       matrix:

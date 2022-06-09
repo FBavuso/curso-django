@@ -13,7 +13,8 @@ jobs:
       max-parallel: 4
       matrix:
         python-version: ["3.10"]
-
+    env:
+      DEBUG: True
     steps:
     - uses: actions/checkout@v3
     - name: Set up Python ${{ matrix.python-version }}
@@ -34,7 +35,6 @@ jobs:
       if: steps.cache-pipenv.outputs.cache-hit != 'true'
       run: |
         pipenv install --deploy --dev
-        cp contrib/env-sample .env
     - name: Run tests and collect coverage
       run: pipenv run pytest --cov=pypro
     - name: Upload coverage reports to Codecov with GitHub Action

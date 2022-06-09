@@ -8,7 +8,8 @@ on:
 
 jobs:
   build:
-
+  env:
+    DEBUG=True
     runs-on: ubuntu-latest
     strategy:
       max-parallel: 4

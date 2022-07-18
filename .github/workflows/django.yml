@@ -34,6 +34,7 @@ jobs:
       if: steps.cache-pipenv.outputs.cache-hit != 'true'
       run: |
         pipenv install --deploy --dev
+        pipenv install gunicorn
     - name: Run tests and collect coverage
       run: pipenv run pytest --cov=pypro
     - name: Upload coverage reports to Codecov with GitHub Action

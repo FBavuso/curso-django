@@ -36,10 +36,10 @@ ALLOWED_HOSTS = config('ALLOWED_HOSTS', cast=Csv()) #['127.0.0.1', 'pythonprodja
 INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
-    'colectfast'
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
+    'colectfast',
     'django.contrib.staticfiles',
     'pypro.base',
 ]
